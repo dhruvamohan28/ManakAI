@@ -2,7 +2,6 @@ import pandas as pd
 
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-from sentence_transformers import SentenceTransformer
 
 # --------------------------------
 # 1. LOAD THE STANDARDS DATASET
@@ -39,15 +38,7 @@ standard_vectors = vectorizer.fit_transform(
     df["combined_text"]
 )
 
-# --------------------------------
-# SEMANTIC AI MODEL
-# --------------------------------
 
-model = SentenceTransformer("all-MiniLM-L6-v2")
-
-standard_embeddings = model.encode(
-    df["combined_text"].tolist()
-)
 
 # --------------------------------
 # 4. MATCH SPECIFICATION
@@ -66,23 +57,10 @@ def match_standards(specification, top_n=5):
         standard_vectors
     )[0]
 
-    # Semantic similarity
-    query_embedding = model.encode(
-        [specification]
-    )
-
-    semantic_scores = cosine_similarity(
-        query_embedding,
-        standard_embeddings
-    )[0]
-
+    
     # Combine TF-IDF and semantic similarity
 
-    final_scores = (
-        0.4 * similarities +
-        0.6 * semantic_scores
-    )
-
+    final_scores = similarities
     # Copy dataset
     results = df.copy()
 

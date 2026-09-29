@@ -2,10 +2,11 @@ Flask
 flask-cors
 pandas
 scikit-learn
-sentence-transformers
-torch
-transformers
-huggingface-hub
+Flask
+flask-cors
+pandas
+scikit-learn
+gunicorn
 numpy
 scipy
 gunicorn
