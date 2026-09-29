@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Standards Recommendation Engine</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="navbar">
+        <div class="logo">
+            IS<span>AI</span>
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#about">About</a>
+        </nav>
+    </header>
+
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="badge">
+                🇮🇳 Indian Standards • AI Powered
+            </div>
+
+            <h1>
+                AI-Powered Recommendation Engine
+                <span>for Indian Standards</span>
+            </h1>
+
+            <p>
+                Analyze procurement specifications and identify
+                relevant Indian Standards using AI-powered
+                semantic matching and intelligent validation.
+            </p>
+
+            <div class="hero-buttons">
+                <button onclick="scrollToAnalyzer()" class="primary-btn">
+                    Analyze Specification →
+                </button>
+
+                <button onclick="scrollToHowItWorks()" class="secondary-btn">
+                    How It Works
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ANALYZER SECTION -->
+    <section class="analyzer-section" id="analyzer">
+
+        <div class="section-heading">
+
+            <span class="small-title">
+                AI SPECIFICATION ANALYZER
+            </span>
+
+            <h2>
+                Find the Right Indian Standard
+            </h2>
+
+            <p>
+                Enter your procurement specification below.
+                Our AI will analyze it and recommend relevant standards.
+            </p>
+
+        </div>
+
+
+        <div class="analyzer-card">
+
+            <label for="specification">
+                Procurement Specification
+            </label>
+
+            <textarea
+                id="specification"
+                placeholder="Example: Structural steel plates for bridge construction with minimum yield strength of 250 MPa..."
+            ></textarea>
+
+
+            <div class="input-info">
+
+                <span>
+                    💡 Tip: Include product, material,
+                    application and technical requirements.
+                </span>
+
+                <span id="char-count">
+                    0 characters
+                </span>
+
+            </div>
+
+
+            <button
+                id="analyze-btn"
+                class="analyze-btn"
+                onclick="analyzeSpecification()"
+            >
+                <span>Analyze Specification</span>
+                <span>→</span>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- LOADING SECTION -->
+
+    <section id="loading-section" class="loading-section hidden">
+
+        <div class="loading-card">
+
+            <div class="loader"></div>
+
+            <h2>
+                Analyzing Specification...
+            </h2>
+
+            <p>
+                AI is identifying applicable Indian Standards
+            </p>
+
+            <div class="analysis-steps">
+
+                <div class="analysis-step active">
+                    ✓ Extracting requirements
+                </div>
+
+                <div class="analysis-step active">
+                    ✓ Understanding specification context
+                </div>
+
+                <div class="analysis-step">
+                    ⟳ Matching Indian Standards
+                </div>
+
+                <div class="analysis-step">
+                    ○ Checking standard versions
+                </div>
+
+                <div class="analysis-step">
+                    ○ Mapping related standards
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- RESULTS SECTION -->
+
+    <section id="results-section" class="results-section hidden">
+
+        <div class="section-heading">
+
+            <span class="small-title">
+                AI ANALYSIS COMPLETE
+            </span>
+
+            <h2>
+                Recommendation Results
+            </h2>
+            <div class="result-summary">
+
+    <div class="summary-box">
+        <span>Standards Found</span>
+        <strong>03</strong>
+    </div>
+
+    <div class="summary-box">
+        <span>Top Match</span>
+        <strong>94%</strong>
+    </div>
+
+    <div class="summary-box">
+        <span>Validation</span>
+        <strong>Passed</strong>
+    </div>
+
+    <div class="summary-box">
+        <span>References</span>
+        <strong>03</strong>
+    </div>
+
+</div>
+
+            <p>
+                Based on the provided procurement specification,
+                the AI identified the following standards.
+            </p>
+
+        </div>
+
+
+        <!-- EXTRACTED REQUIREMENTS -->
+
+        <div class="result-container">
+
+            <div class="result-card">
+
+                <div class="card-header">
+                    <h3>🔍 Extracted Requirements</h3>
+                </div>
+
+                <div class="requirements-grid">
+
+                    <div class="requirement">
+                        <span>Product</span>
+                        <strong id="product-result">
+                            Structural Steel Plates
+                        </strong>
+                    </div>
+
+                    <div class="requirement">
+                        <span>Material</span>
+                        <strong id="material-result">
+                            Steel
+                        </strong>
+                    </div>
+
+                    <div class="requirement">
+                        <span>Application</span>
+                        <strong id="application-result">
+                            Bridge Construction
+                        </strong>
+                    </div>
+
+                    <div class="requirement">
+                        <span>Technical Requirement</span>
+                        <strong id="technical-result">
+                            Yield Strength: 250 MPa
+                        </strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RECOMMENDED STANDARDS -->
+
+            <div class="result-card">
+
+                <div class="card-header">
+
+                    <div>
+                        <h3>⭐ Recommended Standards</h3>
+                        <p>
+                            Standards ranked based on contextual relevance
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- DYNAMIC RECOMMENDED STANDARDS -->
+
+<div
+    class="standards-list"
+    id="recommended-standards-container"
+>
+
+    <div class="standard-card">
+
+        <div class="standard-main">
+
+            <div>
+
+                <div class="standard-title">
+                    Loading...
+                </div>
+
+                <div class="standard-description">
+                    AI recommendation is loading...
+                </div>
+
+            </div>
+
+            <div class="match-score">
+                <strong>--%</strong>
+                <span>Match</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+            <!-- VALIDATION -->
+             <!-- Missing References Section -->
+
+<div class="result-card missing-references-card">
+
+    <div class="card-header">
+
+        <h3>
+            ⚠ Potential Missing References
+        </h3>
+
+    </div>
+
+    <p class="section-description">
+        The AI identified standards that may need to be
+        included or reviewed in the procurement specification.
+    </p>
+
+    <div id="missing-references-container">
+
+        <div class="no-missing-references">
+            No missing references detected.
+        </div>
+
+    </div>
+
+</div>
+
+            <div class="result-card">
+
+                <div class="card-header">
+
+                    <h3>
+                        🛡 Specification Validation
+                        <!-- Missing References Section -->
+                    </h3>
+
+                </div>
+
+
+                <div class="validation-grid">
+
+                    <div class="validation success">
+
+                        <div class="validation-icon">
+                            ✓
+                        </div>
+
+                        <div>
+                            <strong>
+                                Relevant Standard Found
+                            </strong>
+
+                            <p>
+                                Applicable Indian Standard identified.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="validation warning">
+
+                        <div class="validation-icon">
+                            ⚠
+                        </div>
+
+                        <div>
+                            <strong>
+                                Outdated Reference Detected
+                            </strong>
+
+                            <p>
+                                IS 2062:2011 may need to be
+                                updated to the current version.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="validation warning">
+
+                        <div class="validation-icon">
+                            ⚠
+                        </div>
+
+                        <div>
+                            <strong>
+                                Potential Missing References
+                            </strong>
+
+                            <p>
+                                Additional allied or normative
+                                standards may need review.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RELATED STANDARDS -->
+
+            <div class="result-card">
+
+                <div class="card-header">
+
+                    <h3>
+                        🔗 Related Standards
+                    </h3>
+
+                    <p>
+                        Cross-referenced and associated standards
+                    </p>
+
+                </div>
+
+
+                <div
+    class="related-grid"
+    id="related-standards-container"
+>
+
+    <div class="related-card">
+
+        <span class="related-type allied">
+            ALLIED
+        </span>
+
+        <h4>
+            Loading...
+        </h4>
+
+        <p>
+            Related technical standard
+        </p>
+
+    </div>
+
+</div>
+
+                    <div class="related-card">
+
+                        <span class="related-type normative">
+                            NORMATIVE
+                        </span>
+
+                        <h4>
+                            IS YYYY
+                        </h4>
+
+                        <p>
+                            Normative reference
+                        </p>
+
+                    </div>
+
+
+                    <div class="related-card">
+
+                        <span class="related-type cross">
+                            CROSS-REFERENCE
+                        </span>
+
+                        <h4>
+                            IS ZZZZ
+                        </h4>
+
+                        <p>
+                            Cross-referenced standard
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FINAL RECOMMENDATION -->
+
+            <div class="final-recommendation">
+
+                <div class="final-icon">
+                    💡
+                </div>
+
+                <div>
+
+                    <span>
+                        AI RECOMMENDATION
+                    </span>
+
+                    <h3 id="final-recommendation-text">
+    AI recommendation will appear here.
+</h3>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="new-analysis-btn"
+                onclick="newAnalysis()"
+            >
+                ← Analyze Another Specification
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- HOW IT WORKS -->
+
+    <section
+        class="how-section"
+        id="how-it-works"
+    >
+
+        <div class="section-heading">
+
+            <span class="small-title">
+                HOW IT WORKS
+            </span>
+
+            <h2>
+                From Specification to Smart Recommendation
+            </h2>
+
+        </div>
+
+
+        <div class="workflow">
+
+            <div class="workflow-step">
+
+                <div class="step-number">
+                    01
+                </div>
+
+                <h3>
+                    Specification Input
+                </h3>
+
+                <p>
+                    Enter procurement requirements and
+                    technical specifications.
+                </p>
+
+            </div>
+
+
+            <div class="workflow-arrow">
+                →
+            </div>
+
+
+            <div class="workflow-step">
+
+                <div class="step-number">
+                    02
+                </div>
+
+                <h3>
+                    AI Analysis
+                </h3>
+
+                <p>
+                    NLP identifies products, materials,
+                    applications and requirements.
+                </p>
+
+            </div>
+
+
+            <div class="workflow-arrow">
+                →
+            </div>
+
+
+            <div class="workflow-step">
+
+                <div class="step-number">
+                    03
+                </div>
+
+                <h3>
+                    Standard Matching
+                </h3>
+
+                <p>
+                    AI matches the specification with
+                    relevant Indian Standards.
+                </p>
+
+            </div>
+
+
+            <div class="workflow-arrow">
+                →
+            </div>
+
+
+            <div class="workflow-step">
+
+                <div class="step-number">
+                    04
+                </div>
+
+                <h3>
+                    Validation
+                </h3>
+
+                <p>
+                    Versions, missing references and
+                    related standards are checked.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer id="about">
+
+        <div class="footer-content">
+
+            <div>
+                <strong>
+                    ISAI
+                </strong>
+
+                <p>
+                    AI-powered Indian Standards
+                    Recommendation Engine.
+                </p>
+            </div>
+
+            <div>
+                <p>
+                    SIH Prototype • Smart Procurement
+                </p>
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
