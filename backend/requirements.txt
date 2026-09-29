@@ -1,0 +1,10 @@
+Flask
+flask-cors
+pandas
+scikit-learn
+sentence-transformers
+torch
+transformers
+huggingface-hub
+numpy
+scipy
