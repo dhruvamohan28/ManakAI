@@ -1,0 +1,20 @@
+is_number,title,description,keywords,domain,revision,status,allied_standards,normative_references,cross_references
+IS 2062,Hot Rolled Medium and High Tensile Structural Steel,Structural steel plates and sections for construction,structural steel plates steel construction hot rolled,Construction,2025,Active,IS 800,IS 800,IS 875
+IS 800,General Construction in Steel,General requirements for steel structures and design,steel structures structural design construction steel,Construction,2007,Active,IS 2062,IS 2062,IS 875
+IS 456,Plain and Reinforced Concrete,Code of practice for plain and reinforced concrete,concrete reinforced concrete RCC construction,Construction,2000,Active,IS 383; IS 1786,IS 10262,IS 875
+IS 383,Coarse and Fine Aggregate for Concrete,Specification for aggregates used in concrete,aggregate concrete coarse fine aggregate,Materials,2016,Active,IS 456,IS 456,IS 10262
+IS 1786,High Strength Deformed Steel Bars and Wires for Concrete Reinforcement,Specification for high strength deformed steel bars and wires used for concrete reinforcement,rebar reinforcement steel bars deformed bars,Materials,2008,Active,IS 456,IS 456,IS 13920
+IS 10262,Concrete Mix Proportioning,Guidelines for concrete mix proportioning,mix design concrete proportioning construction,Construction,2019,Active,IS 456; IS 383,IS 456; IS 383,IS 516
+IS 875,Design Loads for Buildings and Structures,Code for design loads including dead live wind and other loads,design loads dead load live load wind load building,Construction,1987,Active,IS 800,IS 800,IS 1893
+IS 1893,Criteria for Earthquake Resistant Design of Structures,Criteria for earthquake resistant structural design,earthquake seismic design structures,Construction,2016,Active,IS 800; IS 13920,IS 800,IS 13920
+IS 13920,Ductile Design and Detailing of Reinforced Concrete Structures,Code for ductile detailing of reinforced concrete structures,ductile detailing seismic RCC earthquake,Construction,2016,Active,IS 456; IS 1893,IS 456; IS 1893,IS 800
+IS 4926,Ready-Mixed Concrete,Requirements for ready mixed concrete,ready mix concrete RMC concrete construction,Construction,2003,Active,IS 456; IS 383,IS 456,IS 10262
+IS 3370,Concrete Structures for Storage of Liquids,Code for concrete structures intended for storage of liquids,water tanks liquid retaining structures concrete,Construction,2021,Active,IS 456,IS 456,IS 10262
+IS 9103,Concrete Admixtures,Specification for admixtures used in concrete,concrete admixture additives construction,Materials,1999,Active,IS 456,IS 456,IS 10262
+IS 2645,Integral Cement Waterproofing Compounds,Specification for integral cement waterproofing compounds,waterproofing cement concrete construction,Materials,2003,Active,IS 456,IS 456,IS 3370
+IS 2185,Concrete Masonry Units,Specification for concrete masonry units,concrete blocks masonry construction,Materials,2005,Active,IS 456,IS 456,IS 1905
+IS 1077,Common Burnt Clay Building Bricks,Specification for common burnt clay building bricks,bricks clay masonry building construction,Materials,1992,Active,IS 1905,IS 1905,IS 456
+IS 5216,Safety Procedures and Practices in Electrical Work,Guidelines for safety procedures and practices in electrical work,electrical safety electrical work safety,Electrical,1982,Active,IS 732,IS 732,IS 3043
+IS 732,Code of Practice for Electrical Wiring Installations,Code of practice for electrical wiring installations,electrical wiring installations wiring,Electrical,2019,Active,IS 5216; IS 3043,IS 3043,IS 5216
+IS 694,PVC Insulated Cables for Working Voltages up to 1100 V,Specification for PVC insulated cables,electrical cables PVC insulated wires,Electrical,2010,Active,IS 732,IS 732,IS 3043
+IS 3043,Code of Practice for Earthing,Code of practice for earthing electrical installations,earthing grounding electrical safety,Electrical,2018,Active,IS 732; IS 5216,IS 732,IS 5216
